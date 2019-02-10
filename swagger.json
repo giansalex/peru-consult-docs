@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "Consulta de DNI y RUC.",
+    "description": "Consultas de DNI y RUC - Perú",
     "version": "3.0",
     "title": "PERU CONSULTAS",
     "contact": {
@@ -12,8 +12,16 @@
   "basePath": "/api/v1",
   "tags": [
     {
-      "name": "consulta",
-      "description": "Consultas Perú"
+      "name": "RENIEC",
+      "description": "Registro Nacional de Identificación y Estado Civil."
+    },
+    {
+      "name": "SUNAT",
+      "description": "Superintendencia Nacional de Aduanas y de Administración Tributaria."
+    },
+    {
+      "name": "GraphQL",
+      "description": "Lenguaje de consulta para APIs, disponible para RUC y DNI."
     }
   ],
   "schemes": [
@@ -24,7 +32,7 @@
     "/ruc/{ruc}": {
       "get": {
         "tags": [
-          "consulta"
+          "SUNAT"
         ],
         "summary": "RUC",
         "description": "Retorna información segun el ruc",
@@ -58,7 +66,7 @@
     "/ruc": {
       "post": {
         "tags": [
-          "consulta"
+          "SUNAT"
         ],
         "summary": "RUC Multiple",
         "description": "Retorna informacion segun los rucs",
@@ -101,7 +109,7 @@
     "/dni/{dni}": {
       "get": {
         "tags": [
-          "consulta"
+          "RENIEC"
         ],
         "summary": "DNI",
         "description": "Retorna informacion segun el dni",
@@ -135,7 +143,7 @@
     "/dni": {
       "post": {
         "tags": [
-          "consulta"
+          "RENIEC"
         ],
         "summary": "DNI Multiple",
         "description": "Retorna informacion segun los dnis",
@@ -176,7 +184,7 @@
     "/user-sol/{ruc}/{user}": {
       "get": {
         "tags": [
-          "consulta"
+          "SUNAT"
         ],
         "summary": "Verificación usuario SOL",
         "description": "Retorna la válidez del usuario SOL",
@@ -215,7 +223,7 @@
     "/graph": {
       "post": {
         "tags": [
-          "consulta"
+          "GraphQL"
         ],
         "summary": "GraphQL",
         "description": "Retorna informacion de RUC y/o DNI",

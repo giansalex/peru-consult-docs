@@ -1,6 +1,6 @@
 get:
   tags:
-    - consulta
+    - RENIEC
   summary: DNI
   description: Retorna informacion segun el dni
   operationId: getByDni

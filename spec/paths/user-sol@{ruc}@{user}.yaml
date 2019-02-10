@@ -1,6 +1,6 @@
 get:
   tags:
-    - consulta
+    - SUNAT
   summary: Verificación usuario SOL
   description: Retorna la válidez del usuario SOL
   operationId: getValidUserSol

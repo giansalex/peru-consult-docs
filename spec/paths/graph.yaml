@@ -1,6 +1,6 @@
 post:
   tags:
-    - consulta
+    - GraphQL
   summary: GraphQL
   description: Retorna informacion de RUC y/o DNI
   operationId: getByGraph

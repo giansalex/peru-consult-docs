@@ -1,6 +1,6 @@
 get:
   tags:
-    - consulta
+    - SUNAT
   summary: RUC
   description: Retorna información segun el ruc
   operationId: getByRuc

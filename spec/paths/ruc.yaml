@@ -1,6 +1,6 @@
 post:
   tags:
-    - consulta
+    - SUNAT
   summary: RUC Multiple
   description: Retorna informacion segun los rucs
   operationId: getByRucs
