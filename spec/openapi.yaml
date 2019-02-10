@@ -1,0 +1,23 @@
+swagger: '2.0'
+info:
+  description: Consulta de DNI y RUC.
+  version: '3.0'
+  title: PERU CONSULTAS
+  contact:
+    email: giansalex@gmail.com
+host: consult.api
+basePath: /api/v1
+tags:
+  - name: consulta
+    description: Consultas Perú
+schemes:
+  - http
+  - https
+security:
+  - ApiToken: []
+securityDefinitions:
+  ApiToken:
+    name: token
+    type: apiKey
+    in: query
+    description: Api Token

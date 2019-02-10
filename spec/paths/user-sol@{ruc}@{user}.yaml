@@ -1,0 +1,26 @@
+get:
+  tags:
+    - consulta
+  summary: Verificación usuario SOL
+  description: Retorna la válidez del usuario SOL
+  operationId: getValidUserSol
+  parameters:
+    - name: ruc
+      in: path
+      description: Ruc del contribuyente
+      required: true
+      type: string
+      minLength: 11
+    - name: user
+      in: path
+      description: usuario Clave SOL
+      required: true
+      type: string
+      minLength: 8
+  produces:
+    - application/json
+  responses:
+    '200':
+      description: Operacion exitosa
+      schema:
+        type: boolean

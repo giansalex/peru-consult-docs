@@ -1,0 +1,8 @@
+specFileName: swagger.json
+apiTitle: Peru Consulta
+splitSpec: true
+codeSamples: true
+swaggerUI: false
+travis: true
+repo: giansalex/peru-consult-docs
+oasVersion: '2.0'

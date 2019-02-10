@@ -1,0 +1,22 @@
+get:
+  tags:
+    - consulta
+  summary: DNI
+  description: Retorna informacion segun el dni
+  operationId: getByDni
+  parameters:
+    - name: dni
+      in: path
+      description: Dni de la persona
+      required: true
+      type: string
+      minLength: 8
+  produces:
+    - application/json
+  responses:
+    '200':
+      description: Operacion exitosa
+      schema:
+        $ref: '#/definitions/DniResponse'
+    '404':
+      description: Dni invalido o no encontrado

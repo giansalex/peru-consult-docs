@@ -1,0 +1,12 @@
+type: object
+properties:
+  dni:
+    type: string
+  nombres:
+    type: string
+  apellidoPaterno:
+    type: string
+  apellidoMaterno:
+    type: string
+  codVerifica:
+    type: string

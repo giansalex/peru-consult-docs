@@ -1,0 +1,22 @@
+get:
+  tags:
+    - consulta
+  summary: RUC
+  description: Retorna información segun el ruc
+  operationId: getByRuc
+  parameters:
+    - name: ruc
+      in: path
+      description: Ruc de la empresa
+      required: true
+      type: string
+      minLength: 11
+  produces:
+    - application/json
+  responses:
+    '200':
+      description: Operacion exitosa
+      schema:
+        $ref: '#/definitions/RucResponse'
+    '404':
+      description: Ruc invalido o no encontrado

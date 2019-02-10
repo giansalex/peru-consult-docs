@@ -1,0 +1,61 @@
+type: object
+properties:
+  ruc:
+    type: string
+  razonSocial:
+    type: string
+  nombreComercial:
+    type: string
+  telefonos:
+    type: array
+    items:
+      type: string
+  tipo:
+    type: string
+  estado:
+    type: string
+  condicion:
+    type: string
+  direccion:
+    type: string
+  departamento:
+    type: string
+  provincia:
+    type: string
+  distrito:
+    type: string
+  fechaInscripcion:
+    type: string
+    format: date
+  sistEmsion:
+    type: string
+  sistContabilidad:
+    type: string
+  actExterior:
+    type: string
+  actEconomicas:
+    type: array
+    items:
+      type: string
+  cpPago:
+    type: array
+    items:
+      type: string
+  sistElectronica:
+    type: array
+    items:
+      type: string
+  fechaEmisorFe:
+    type: string
+    format: date
+  cpeElectronico:
+    type: array
+    items:
+      type: string
+  fechaPle:
+    type: string
+    format: date
+  padrones:
+    type: array
+    items:
+      type: string

@@ -1,0 +1,26 @@
+post:
+  tags:
+    - consulta
+  summary: DNI Multiple
+  description: Retorna informacion segun los dnis
+  operationId: getByDnis
+  parameters:
+    - name: body
+      in: body
+      description: Lista de Dnis
+      required: true
+      schema:
+        type: array
+        items:
+          type: string
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  responses:
+    '200':
+      description: Operacion exitosa
+      schema:
+        $ref: '#/definitions/DniResponse'
+    '404':
+      description: No es una lista de dnis

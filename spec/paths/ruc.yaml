@@ -1,0 +1,27 @@
+post:
+  tags:
+    - consulta
+  summary: RUC Multiple
+  description: Retorna informacion segun los rucs
+  operationId: getByRucs
+  parameters:
+    - name: body
+      in: body
+      description: Lista de Rucs
+      required: true
+      schema:
+        type: array
+        items:
+          type: string
+  consumes:
+    - application/json
+  produces:
+    - application/json
+  responses:
+    '200':
+      description: Operacion exitosa
+      schema:
+        items:
+          $ref: '#/definitions/RucResponse'
+    '404':
+      description: No es una lista de rucs
