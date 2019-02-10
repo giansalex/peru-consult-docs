@@ -9,14 +9,17 @@ get:
       in: path
       description: Dni de la persona
       required: true
-      type: string
-      minLength: 8
-  produces:
-    - application/json
+      example: '46658592'
+      schema:
+        type: string
+        minLength: 8
+        maxLength: 8
   responses:
     '200':
       description: Operacion exitosa
-      schema:
-        $ref: '#/definitions/DniResponse'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/DniResponse'
     '404':
       description: Dni invalido o no encontrado

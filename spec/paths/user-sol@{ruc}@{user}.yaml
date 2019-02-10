@@ -9,18 +9,21 @@ get:
       in: path
       description: Ruc del contribuyente
       required: true
-      type: string
-      minLength: 11
+      schema:
+        type: string
+        minLength: 11
+        maxLength: 11
     - name: user
       in: path
       description: usuario Clave SOL
       required: true
-      type: string
-      minLength: 8
-  produces:
-    - application/json
+      schema:
+        type: string
+        minLength: 8
   responses:
     '200':
       description: Operacion exitosa
-      schema:
-        type: boolean
+      content:
+        application/json:
+          schema:
+            type: boolean

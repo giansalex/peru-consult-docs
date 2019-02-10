@@ -1,4 +1,4 @@
-# Peru Consulta OpenAPI Specification
+# Peru Consultas OpenAPI Specification
 [![Build Status](https://travis-ci.com/giansalex/peru-consult-docs.svg?branch=master)](https://travis-ci.com/giansalex/peru-consult-docs)
 ## Steps to finish
 

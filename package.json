@@ -1,5 +1,5 @@
 {
-  "name": "peru-consulta",
+  "name": "peru-consultas",
   "version": "1.0.0",
   "dependencies": {
     "swagger-repo": "^2.0.0-rc.11"

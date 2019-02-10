@@ -4,24 +4,24 @@ post:
   summary: RUC Multiple
   description: Retorna informacion segun los rucs
   operationId: getByRucs
-  parameters:
-    - name: body
-      in: body
-      description: Lista de Rucs
-      required: true
-      schema:
-        type: array
-        items:
-          type: string
-  consumes:
-    - application/json
-  produces:
-    - application/json
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            type: string
+            minLength: 11
+            maxLength: 11
+    description: Lista de Rucs
+    required: true
   responses:
     '200':
       description: Operacion exitosa
-      schema:
-        items:
-          $ref: '#/definitions/RucResponse'
+      content:
+        application/json:
+          schema:
+            items:
+              $ref: '#/components/schemas/RucResponse'
     '404':
       description: No es una lista de rucs
