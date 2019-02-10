@@ -1,0 +1,13 @@
+type: object
+properties:
+  dni:
+    type: string
+    example: '00000001'
+  nombres:
+    type: string
+  apellidoPaterno:
+    type: string
+  apellidoMaterno:
+    type: string
+  codVerifica:
+    type: string

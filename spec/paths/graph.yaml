@@ -1,0 +1,20 @@
+post:
+  tags:
+    - GraphQL
+  summary: GraphQL
+  description: Retorna informacion de RUC y/o DNI
+  operationId: getByGraph
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/QueryRequest'
+    description: Query
+    required: true
+  responses:
+    '200':
+      description: Operacion exitosa
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/QueryResponse'

@@ -1,0 +1,25 @@
+get:
+  tags:
+    - SUNAT
+  summary: RUC
+  description: Retorna información segun el ruc
+  operationId: getByRuc
+  parameters:
+    - name: ruc
+      in: path
+      description: Ruc de la empresa
+      required: true
+      example: '20100070970'
+      schema:
+        type: string
+        minLength: 11
+        maxLength: 11
+  responses:
+    '200':
+      description: Operacion exitosa
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RucResponse'
+    '404':
+      description: Ruc invalido o no encontrado

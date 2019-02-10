@@ -1,0 +1,8 @@
+specFileName: openapi.json
+apiTitle: Peru Consultas
+splitSpec: true
+codeSamples: false
+swaggerUI: false
+travis: true
+repo: giansalex/peru-consult-docs
+oasVersion: 3.0.0

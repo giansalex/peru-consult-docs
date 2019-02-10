@@ -1,0 +1,13 @@
+type: object
+properties:
+  data:
+    type: object
+    properties:
+      person:
+        $ref: '#/components/schemas/DniResponse'
+      company:
+        $ref: '#/components/schemas/RucResponse'
+  errors:
+    type: array
+    items:
+      $ref: '#/components/schemas/ErrorQuery'

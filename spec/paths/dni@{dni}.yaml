@@ -1,0 +1,25 @@
+get:
+  tags:
+    - RENIEC
+  summary: DNI
+  description: Retorna informacion segun el dni
+  operationId: getByDni
+  parameters:
+    - name: dni
+      in: path
+      description: Dni de la persona
+      required: true
+      example: '46658592'
+      schema:
+        type: string
+        minLength: 8
+        maxLength: 8
+  responses:
+    '200':
+      description: Operacion exitosa
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/DniResponse'
+    '404':
+      description: Dni invalido o no encontrado

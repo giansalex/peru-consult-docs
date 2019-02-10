@@ -1,0 +1,20 @@
+openapi: 3.0.0
+info:
+  description: Consultas de DNI y RUC - **Perú**
+  version: '3.0'
+  title: PERU CONSULTAS
+  contact:
+    name: Giancarlos Salas
+    email: giansalex@gmail.com
+tags:
+  - name: RENIEC
+    description: Registro Nacional de Identificación y Estado Civil.
+  - name: SUNAT
+    description: Superintendencia Nacional de Aduanas y de Administración Tributaria.
+  - name: GraphQL
+    description: 'Lenguaje de consulta para APIs, disponible para RUC y DNI.'
+security:
+  - ApiToken: []
+servers:
+  - url: 'http://consult.api/api/v1'
+    description: PRODUCTION

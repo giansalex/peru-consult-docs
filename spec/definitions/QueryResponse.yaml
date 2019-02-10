@@ -1,0 +1,13 @@
+type: object
+properties:
+  data:
+    type: object
+    properties:
+      person:
+        $ref: '#/definitions/DniResponse'
+      company:
+        $ref: '#/definitions/RucResponse'
+  errors:
+    type: array
+    items:
+      $ref: '#/definitions/ErrorQuery'

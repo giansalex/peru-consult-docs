@@ -1,0 +1,26 @@
+post:
+  tags:
+    - RENIEC
+  summary: DNI Multiple
+  description: Retorna informacion segun los dnis
+  operationId: getByDnis
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            type: string
+            minLength: 8
+            maxLength: 8
+    description: Lista de Dnis
+    required: true
+  responses:
+    '200':
+      description: Operacion exitosa
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/DniResponse'
+    '404':
+      description: No es una lista de dnis
