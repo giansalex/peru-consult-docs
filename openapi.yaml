@@ -1,7 +1,11 @@
 openapi: 3.0.0
 info:
-  description: Consultas de DNI y RUC - **Perú**
-  version: '3.0'
+  description: |
+    Consultas de DNI y RUC - **Perú**
+
+    ## GraphQL
+    Endpoint `api/graphql`
+  version: '4.0'
   title: PERU CONSULTAS
   contact:
     name: Giancarlos Salas
@@ -11,8 +15,6 @@ tags:
     description: Registro Nacional de Identificación y Estado Civil.
   - name: SUNAT
     description: Superintendencia Nacional de Aduanas y de Administración Tributaria.
-  - name: GraphQL
-    description: 'Lenguaje de consulta para APIs, disponible para RUC y DNI.'
 security:
   - ApiToken: []
 servers:
@@ -74,7 +76,18 @@ paths:
           description: Dni invalido o no encontrado
       x-code-samples:
         - lang: 'C#'
-          source: "using System.Net;\r\nusing Newtonsoft.Json;\r\n\r\n\r\nvar dni = \"00000001\";\r\nvar token = \"YOUR-TOKEN\";\r\n\r\nusing (WebClient wc = new WebClient())\r\n{\r\n   var json = wc.DownloadString(\"http://consulta.pe/api/v1/dni/\"+dni+\"?token=\"+token);\r\n   var person = JObject.Parse(json);\r\n}"
+          source: |-
+            using System.Net;
+            using Newtonsoft.Json;
+
+            var dni = "00000001";
+            var token = "YOUR-TOKEN";
+
+            using (WebClient wc = new WebClient())
+            {
+               var json = wc.DownloadString("http://consulta.pe/api/v1/dni/"+dni+"?token="+token);
+               var person = JObject.Parse(json);
+            }
         - lang: PHP
           source: |
             $dni = '00000001';
@@ -83,27 +96,6 @@ paths:
             $json = file_get_contents('http://consulta.pe/api/v1/dni/'.$dni.'?token='.$token);
 
             $person = json_decode($json);
-  /graph:
-    post:
-      tags:
-        - GraphQL
-      summary: GraphQL
-      description: Retorna informacion de RUC y/o DNI
-      operationId: getByGraph
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/QueryRequest'
-        description: Query
-        required: true
-      responses:
-        '200':
-          description: Operacion exitosa
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/QueryResponse'
   /ruc:
     post:
       tags:
@@ -222,28 +214,6 @@ components:
               column:
                 type: integer
                 format: int32
-    QueryRequest:
-      type: object
-      properties:
-        query:
-          type: string
-          description: GraphQL query
-        variables:
-          type: object
-    QueryResponse:
-      type: object
-      properties:
-        data:
-          type: object
-          properties:
-            person:
-              $ref: '#/components/schemas/DniResponse'
-            company:
-              $ref: '#/components/schemas/RucResponse'
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/ErrorQuery'
     RucResponse:
       type: object
       properties:

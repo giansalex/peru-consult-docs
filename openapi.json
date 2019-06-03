@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "description": "Consultas de DNI y RUC - **Perú**",
-    "version": "3.0",
+    "description": "Consultas de DNI y RUC - **Perú**\n\n## GraphQL\nEndpoint `api/graphql`\n",
+    "version": "4.0",
     "title": "PERU CONSULTAS",
     "contact": {
       "name": "Giancarlos Salas",
@@ -17,10 +17,6 @@
     {
       "name": "SUNAT",
       "description": "Superintendencia Nacional de Aduanas y de Administración Tributaria."
-    },
-    {
-      "name": "GraphQL",
-      "description": "Lenguaje de consulta para APIs, disponible para RUC y DNI."
     }
   ],
   "security": [
@@ -116,46 +112,13 @@
         "x-code-samples": [
           {
             "lang": "C#",
-            "source": "using System.Net;\r\nusing Newtonsoft.Json;\r\n\r\n\r\nvar dni = \"00000001\";\r\nvar token = \"YOUR-TOKEN\";\r\n\r\nusing (WebClient wc = new WebClient())\r\n{\r\n   var json = wc.DownloadString(\"http://consulta.pe/api/v1/dni/\"+dni+\"?token=\"+token);\r\n   var person = JObject.Parse(json);\r\n}"
+            "source": "using System.Net;\nusing Newtonsoft.Json;\n\nvar dni = \"00000001\";\nvar token = \"YOUR-TOKEN\";\n\nusing (WebClient wc = new WebClient())\n{\n   var json = wc.DownloadString(\"http://consulta.pe/api/v1/dni/\"+dni+\"?token=\"+token);\n   var person = JObject.Parse(json);\n}"
           },
           {
             "lang": "PHP",
             "source": "$dni = '00000001';\n$token = 'YOUR-TOKEN';\n\n$json = file_get_contents('http://consulta.pe/api/v1/dni/'.$dni.'?token='.$token);\n\n$person = json_decode($json);\n"
           }
         ]
-      }
-    },
-    "/graph": {
-      "post": {
-        "tags": [
-          "GraphQL"
-        ],
-        "summary": "GraphQL",
-        "description": "Retorna informacion de RUC y/o DNI",
-        "operationId": "getByGraph",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/QueryRequest"
-              }
-            }
-          },
-          "description": "Query",
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Operacion exitosa",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/QueryResponse"
-                }
-              }
-            }
-          }
-        }
       }
     },
     "/ruc": {
@@ -332,40 +295,6 @@
                   "format": "int32"
                 }
               }
-            }
-          }
-        }
-      },
-      "QueryRequest": {
-        "type": "object",
-        "properties": {
-          "query": {
-            "type": "string",
-            "description": "GraphQL query"
-          },
-          "variables": {
-            "type": "object"
-          }
-        }
-      },
-      "QueryResponse": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "type": "object",
-            "properties": {
-              "person": {
-                "$ref": "#/components/schemas/DniResponse"
-              },
-              "company": {
-                "$ref": "#/components/schemas/RucResponse"
-              }
-            }
-          },
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ErrorQuery"
             }
           }
         }
