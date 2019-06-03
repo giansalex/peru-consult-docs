@@ -1,7 +1,0 @@
-type: object
-properties:
-  query:
-    type: string
-    description: GraphQL query
-  variables:
-    type: object

@@ -1,5 +1,5 @@
 # Peru Consultas OpenAPI Specification
-[![Build Status](https://travis-ci.com/giansalex/peru-consult-docs.svg?branch=master)](https://travis-ci.com/giansalex/peru-consult-docs)
+[![Build Status](https://travis-ci.org/giansalex/peru-consult-docs.svg?branch=master)](https://travis-ci.org/giansalex/peru-consult-docs)
 ## Steps to finish
 
 1. Enable [Travis](https://docs.travis-ci.com/user/getting-started/#To-get-started-with-Travis-CI%3A) for your repository (**note**: you already have `.travis.yml` file)

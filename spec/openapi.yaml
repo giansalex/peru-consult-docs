@@ -1,7 +1,11 @@
 openapi: 3.0.0
 info:
-  description: Consultas de DNI y RUC - **Perú**
-  version: '3.0'
+  description: |
+                Consultas de DNI y RUC - **Perú**
+                
+                ## GraphQL
+                Endpoint `api/graphql`
+  version: '4.0'
   title: PERU CONSULTAS
   contact:
     name: Giancarlos Salas
@@ -11,8 +15,6 @@ tags:
     description: Registro Nacional de Identificación y Estado Civil.
   - name: SUNAT
     description: Superintendencia Nacional de Aduanas y de Administración Tributaria.
-  - name: GraphQL
-    description: 'Lenguaje de consulta para APIs, disponible para RUC y DNI.'
 security:
   - ApiToken: []
 servers:
