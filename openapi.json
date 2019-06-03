@@ -272,33 +272,6 @@
           }
         }
       },
-      "ErrorQuery": {
-        "type": "object",
-        "properties": {
-          "message": {
-            "type": "string"
-          },
-          "category": {
-            "type": "string"
-          },
-          "locations": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "line": {
-                  "type": "integer",
-                  "format": "int32"
-                },
-                "column": {
-                  "type": "integer",
-                  "format": "int32"
-                }
-              }
-            }
-          }
-        }
-      },
       "RucResponse": {
         "type": "object",
         "properties": {
