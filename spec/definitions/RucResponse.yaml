@@ -59,3 +59,7 @@ properties:
     type: array
     items:
       type: string
+  fechaBaja:
+    type: string
+  profesion:
+    type: string
