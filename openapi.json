@@ -112,11 +112,11 @@
         "x-code-samples": [
           {
             "lang": "C#",
-            "source": "using System.Net;\nusing Newtonsoft.Json;\n\nvar dni = \"00000001\";\nvar token = \"YOUR-TOKEN\";\n\nusing (WebClient wc = new WebClient())\n{\n   var json = wc.DownloadString(\"http://consulta.pe/api/v1/dni/\"+dni+\"?token=\"+token);\n   var person = JObject.Parse(json);\n}"
+            "source": "using System.Net;\r\nusing Newtonsoft.Json;\r\n\r\nvar dni = \"00000001\";\r\nvar token = \"YOUR-TOKEN\";\r\n\r\nusing (WebClient wc = new WebClient())\r\n{\r\n   var json = wc.DownloadString(\"http://consulta.pe/api/v1/dni/\"+dni+\"?token=\"+token);\r\n   var person = JObject.Parse(json);\r\n}"
           },
           {
             "lang": "PHP",
-            "source": "$dni = '00000001';\n$token = 'YOUR-TOKEN';\n\n$json = file_get_contents('http://consulta.pe/api/v1/dni/'.$dni.'?token='.$token);\n\n$person = json_decode($json);\n"
+            "source": "$dni = '00000001';\r\n$token = 'YOUR-TOKEN';\r\n\r\n$json = file_get_contents('http://consulta.pe/api/v1/dni/'.$dni.'?token='.$token);\r\n\r\n$person = json_decode($json);\r\n"
           }
         ]
       }
@@ -200,7 +200,17 @@
           "404": {
             "description": "Ruc invalido o no encontrado"
           }
-        }
+        },
+        "x-code-samples": [
+          {
+            "lang": "C#",
+            "source": "using System.Net;\r\nusing Newtonsoft.Json;\r\n\r\nvar ruc = \"20000000001\";\r\nvar token = \"YOUR-TOKEN\";\r\n\r\nusing (WebClient wc = new WebClient())\r\n{\r\n   var json = wc.DownloadString(\"http://consulta.pe/api/v1/dni/\"+ruc+\"?token=\"+token);\r\n   var company = JObject.Parse(json);\r\n}"
+          },
+          {
+            "lang": "PHP",
+            "source": "$ruc = '20000000001';\r\n$token = 'YOUR-TOKEN';\r\n\r\n$json = file_get_contents('http://consulta.pe/api/v1/ruc/'.$ruc.'?token='.$token);\r\n\r\n$company = json_decode($json);\r\n"
+          }
+        ]
       }
     },
     "/user-sol/{ruc}/{user}": {
@@ -245,7 +255,17 @@
               }
             }
           }
-        }
+        },
+        "x-code-samples": [
+          {
+            "lang": "C#",
+            "source": "using System.Net;\r\nusing Newtonsoft.Json;\r\n\r\nvar ruc  = \"20000000001\";\r\nvar user = \"MODDATOS\";\r\nvar token = \"YOUR-TOKEN\";\r\n\r\nusing (WebClient wc = new WebClient())\r\n{\r\n   var json = wc.DownloadString($\"http://consulta.pe/api/v1/user-sol/{ruc}/{user}?token={token}\");\r\n   var isValid = JObject.Parse(json);\r\n}"
+          },
+          {
+            "lang": "PHP",
+            "source": "$ruc  = '20000000001';\r\n$user = 'MODDATOS';\r\n$token = 'YOUR-TOKEN';\r\n\r\n$json = file_get_contents(\"http://consulta.pe/api/v1/user-sol/$ruc/$user?token=$token\");\r\n\r\n$isValid = json_decode($json);\r\n"
+          }
+        ]
       }
     }
   },
