@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "description": "Consultas de DNI y RUC - **Perú**\n\n## GraphQL\nEndpoint `api/graphql`\n",
-    "version": "4.0",
+    "version": "5.3",
     "title": "PERU CONSULTAS",
     "contact": {
       "name": "Giancarlos Salas",
@@ -31,47 +31,6 @@
     }
   ],
   "paths": {
-    "/dni": {
-      "post": {
-        "tags": [
-          "RENIEC"
-        ],
-        "summary": "DNI Multiple",
-        "description": "Retorna informacion segun los dnis",
-        "operationId": "getByDnis",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 8,
-                  "maxLength": 8
-                }
-              }
-            }
-          },
-          "description": "Lista de Dnis",
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Operacion exitosa",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DniResponse"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "No es una lista de dnis"
-          }
-        }
-      }
-    },
     "/dni/{dni}": {
       "get": {
         "tags": [
@@ -119,49 +78,6 @@
             "source": "$dni = '00000001';\n$token = 'YOUR-TOKEN';\n\n$json = file_get_contents('http://consulta.pe/api/v1/dni/'.$dni.'?token='.$token);\n\n$person = json_decode($json);\n"
           }
         ]
-      }
-    },
-    "/ruc": {
-      "post": {
-        "tags": [
-          "SUNAT"
-        ],
-        "summary": "RUC Multiple",
-        "description": "Retorna informacion segun los rucs",
-        "operationId": "getByRucs",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "minLength": 11,
-                  "maxLength": 11
-                }
-              }
-            }
-          },
-          "description": "Lista de Rucs",
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Operacion exitosa",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "items": {
-                    "$ref": "#/components/schemas/RucResponse"
-                  }
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "No es una lista de rucs"
-          }
-        }
       }
     },
     "/ruc/{ruc}": {
