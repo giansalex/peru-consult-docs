@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "description": "Consultas de DNI y RUC - **Perú**\n\n## GraphQL\nEndpoint `api/graphql`\n",
-    "version": "5.3",
+    "version": "6.1",
     "title": "PERU CONSULTAS",
     "contact": {
       "name": "Giancarlos Salas",
@@ -220,12 +220,6 @@
           },
           "nombreComercial": {
             "type": "string"
-          },
-          "telefonos": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "tipo": {
             "type": "string"
