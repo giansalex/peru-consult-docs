@@ -5,7 +5,7 @@ info:
                 
                 ## GraphQL
                 Endpoint `api/graphql`
-  version: '5.3'
+  version: '6.1'
   title: PERU CONSULTAS
   contact:
     name: Giancarlos Salas

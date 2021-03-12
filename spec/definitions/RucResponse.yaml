@@ -6,10 +6,6 @@ properties:
     type: string
   nombreComercial:
     type: string
-  telefonos:
-    type: array
-    items:
-      type: string
   tipo:
     type: string
   estado:
