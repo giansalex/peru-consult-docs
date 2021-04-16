@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "description": "Consultas de DNI y RUC - **Perú**\n\n## GraphQL\nEndpoint `api/graphql`\n",
-    "version": "6.1",
+    "version": "6.2",
     "title": "PERU CONSULTAS",
     "contact": {
       "name": "Giancarlos Salas",
